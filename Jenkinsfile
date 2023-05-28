@@ -25,7 +25,7 @@ pipeline {
                     deployerId: "NPM_DEPLOYER"
                 )
             }
-
+        }
         stage('Deploy') {
             steps {
              sh 'npm deploy'
