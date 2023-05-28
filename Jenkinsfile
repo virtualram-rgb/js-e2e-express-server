@@ -9,8 +9,7 @@ pipeline {
 
         stage('Install dependencies') {
             steps {
-                withSonarQubeEnv('sonar'){
-                sh 'npm run sonar'
+                sh 'npm install'
                 }
             }
          }
