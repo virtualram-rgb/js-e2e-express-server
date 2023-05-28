@@ -21,14 +21,14 @@ pipeline {
                     tool: 'node', // The NodeJS installation defined in Jenkins global configuration
                     specPath: 'package.json', // Path to your package.json file
                     args: '--registry=https://virtualhost.jfrog.io/artifactory/api/npm/npmproject1-npm/', // Optional: Specify your Artifactory registry URL if it differs from the default registry
-                    deployerId: 'NPM_DEPLOYER', // The Artifactory server ID configured in Jenkins global configuration
+                    deployerId: 'NPM_DEPLOYER'// The Artifactory server ID configured in Jenkins global configuration
                 )
             }
         }
 
         stage('Deploy') {
             steps {
-             'npm deploy'
+             sh 'npm deploy'
             }
         }
     }
