@@ -14,9 +14,13 @@ pipeline {
                 }
             }
          }
+        stage('build'){
+            steps{
+                 sh 'npm run build'
+            }
+        }
         stage('Build and publish') {
             steps {
-                sh 'npm run build',
                 rtNpmPublish(
                     tool: 'node', // The NodeJS installation defined in Jenkins global configuration
                     specPath: 'package.json', // Path to your package.json file
