@@ -22,7 +22,8 @@ pipeline {
                 rtNpmPublish (
                     tool: 'node', // Tool name from Jenkins configuration
                     path: "package.json",
-                    deployerId: "NPM_DEPLOYER"
+                    deployerId: "NPM_DEPLOYER",
+                    repo: "npmproject1-npm"
                 )
             }
         }
