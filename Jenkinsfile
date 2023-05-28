@@ -22,7 +22,7 @@ pipeline {
                 rtNpmPublish (
                     tool: 'node', // Tool name from Jenkins configuration
                     path: "package.json",
-                    deployerId: "jfrog_instance"
+                    serverId: "jfrog_instance"
                 )
             }
         }
