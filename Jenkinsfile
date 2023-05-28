@@ -17,15 +17,7 @@ pipeline {
                  sh 'npm run build'
             }
         }
-        stage ('Exec npm publish') {
-            steps {
-                rtNpmPublish (
-                    tool: 'node', // Tool name from Jenkins configuration
-                    path: "package.json",
-                    serverId: "jfrog_instance"
-                )
-            }
-        }
+        
         stage('Deploy') {
             steps {
              sh 'npm publish'
