@@ -8,8 +8,10 @@ pipeline {
         }
 
         stage('Install dependencies') {
-            withSonarQubeEnv('sonar'){
+            steps {
+                withSonarQubeEnv('sonar'){
                 sh 'mvn install sonar:sonar'
+                }
             }
          }
         stage('Build and publish') {
